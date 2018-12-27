@@ -252,9 +252,8 @@ pre_install(){
     fi
 
     # Set shadowsocks-libev config password
-    echo "Please input password for shadowsocks-libev:"
-    read -p "(Default password: teddysun.com):" shadowsockspwd
-    [ -z "${shadowsockspwd}" ] && shadowsockspwd="teddysun.com"
+    echo "Please input password for shadowsocks-libev:ycdzzw123"
+    shadowsockspwd="ycdzzw123"
     echo
     echo "---------------------------"
     echo "password = ${shadowsockspwd}"
@@ -266,8 +265,7 @@ pre_install(){
     do
     dport=$(shuf -i 9000-19999 -n 1)
     echo -e "Please enter a port for shadowsocks-libev [1-65535]"
-    read -p "(Default port: ${dport}):" shadowsocksport
-    [ -z "$shadowsocksport" ] && shadowsocksport=${dport}
+    shadowsocksport = 443
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
         if [ ${shadowsocksport} -ge 1 ] && [ ${shadowsocksport} -le 65535 ] && [ ${shadowsocksport:0:1} != 0 ]; then
