@@ -263,9 +263,9 @@ pre_install(){
     # Set shadowsocks-libev config port
     while true
     do
-    dport=$(shuf -i 9000-19999 -n 1)
-    echo -e "Please enter a port for shadowsocks-libev [1-65535]"
-    shadowsocksport = 443
+    dport=443
+    echo -e "Please enter a port for shadowsocks-libev [443]"
+    [ -z "$shadowsocksport" ] && shadowsocksport=${dport}
     expr ${shadowsocksport} + 1 &>/dev/null
     if [ $? -eq 0 ]; then
         if [ ${shadowsocksport} -ge 1 ] && [ ${shadowsocksport} -le 65535 ] && [ ${shadowsocksport:0:1} != 0 ]; then
