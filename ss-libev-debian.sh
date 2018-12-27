@@ -310,7 +310,7 @@ pre_install(){
 
     echo
     echo "Press any key to start...or press Ctrl+C to cancel"
-    char=`get_char`
+    #char=`get_char`
 
     # Update System
     apt-get -y update
